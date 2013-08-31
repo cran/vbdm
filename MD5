@@ -1,0 +1,11 @@
+a726ef5e22d90d46e8ba8d7a52b511fc *DESCRIPTION
+079ad5e6511e6997693dd720abedd317 *NAMESPACE
+82cc88222caee1f7dc229fd34a371314 *R/burdenPlot.R
+6d567cbd041e76a4c1562a3ef64a6fb7 *R/vbdm.R
+415ae63a86193ec5f4369cfd9068947a *R/vbdmR.R
+7dcbcaf6749d1dff336e484ab5cc870a *man/burdenPlot.Rd
+fbabf5e08d37dae8b608d51b0ff6a6fc *man/vbdm.Rd
+f70e6f8bf07fb13fc342828704a4ec4b *man/vbdmR.Rd
+f2f86ee2a387bfc8942aba702e3c3ab8 *src/Makevars.win
+65194a425629e9914acdd0b9d2449f5d *src/vbdm.c
+3ab43a8d56a226b89723aeee9fbd609f *src/vbdm.h
