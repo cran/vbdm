@@ -11,7 +11,7 @@ vbdm(y, G, X=NULL, thres=0.05, genotypes=TRUE,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{A vector of continuous phenotypes.}
-  \item{G}{A matrix of genotypes or variables of interest.  }
+  \item{G}{A matrix of genotypes or variables of interest.  Rows are treated as individuals and columns are treated as genotypes.  }
   \item{X}{An optional matrix of covariates.}
   \item{thres}{If the matrix is of genotypes, then this specifies a minor allele frequency threshold.  Variants with a MAF greater than this threshold are excluded from the analysis.}
   \item{genotypes}{This specifies whether or not to treat G as a matrix of genotypes.  If it is treated as genotypes then it will be filtered based on \code{thres}, and there are more options for missing data imputations.  The default genotype encoding is additive (e.g. genotypes are encoded as 0,1,2).  Also if \code{G} is a genotype matrix vbdm will flip the encoding such that the homozygous major allele genotype is encoded as 0, the heterozygote as 1, and the homozygous minor allele genotype as 2 unless \code{minor.allele=FALSE}}
@@ -51,7 +51,11 @@ vbdm(y, G, X=NULL, thres=0.05, genotypes=TRUE,
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-
+\references{Logsdon, B.A., et al. (2014)
+  \emph{A Variational Bayes Discrete Mixture Test for
+  Rare Variant Association.},
+  \emph{Genetic Epidemiology, Vol. 38(1), 21-30 2014}
+}
 \author{
 Benjamin A. Logsdon (blogsdon@uw.edu)
 }
@@ -88,12 +92,12 @@ cat('vbdm p-value:',res$p.value,'\nT5 p-value:',T5,'\n')
 #vbdm p-value: 0.0005315836 
 #T5 p-value: 0.904476 
 
-#run 10000 permutations
+#run 100 permutations
 set.seed(2)
-res <- vbdm(y=y,G=G,scaling=FALSE,nperm=1e4);
-cat('vbdm approximate p-value:',res$p.value,'\nvbdm permutation p-value:',res$p.value.perm,'\n');
+res <- vbdm(y=y,G=G,scaling=FALSE,nperm=1e2);
+cat('vbdm approximate p-value:',res$p.value,'\nvbdm permutation p-value <',res$p.value.perm,'\n');
 #vbdm approximate p-value: 0.0005315836 
-#vbdm permutation p-value: 8e-04 
+#vbdm permutation p-value: 0 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
